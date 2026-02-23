@@ -1,0 +1,431 @@
+/* Container and Header */
+.customer-container {
+  padding: 24px;
+  animation: fadeIn 0.3s ease-in-out;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.customer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.header-info h1 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin: 0;
+}
+
+.header-info p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Search and Filter Section */
+.search-bar-container {
+  position: relative;
+  margin-bottom: 24px;
+  max-width: 400px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 16px;
+  padding-left: 40px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Lead Grid and Cards */
+.lead-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.lead-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lead-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.lead-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.lead-id {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.to-be-contacted { background: #fee2e2; color: #991b1b; }
+.contacted { background: #dcfce7; color: #166534; }
+.scheduled-to-proposal { background: #dbeafe; color: #1e40af; }
+.declined-offer { background: #f1f5f9; color: #475569; }
+
+/* Lead Body */
+.client-name {
+  font-size: 1.15rem;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.info-row {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 15px;
+}
+
+.approval-badge {
+  background: #f0fdf4;
+  color: #15803d;
+  padding: 6px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+  border: 1px dashed #bbf7d0;
+}
+
+/* Actions */
+.lead-actions {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.status-select-light {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  background-color: #f8fafc;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-add-lead {
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add-lead:hover { background: #1d4ed8; }
+
+.btn-view {
+  flex: 1;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-create-project {
+  flex: 1;
+  background: #059669;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.compact-modal {
+  background: white;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.compact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group-compact.full-width {
+  grid-column: span 2;
+}
+
+.form-group-compact label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.form-group-compact input, 
+.form-group-compact select, 
+.form-group-compact textarea {
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+
+
+.search-section {
+  flex: 1;
+  margin: 0 30px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: #fdfdfd;
+}
+
+/* Styles for the "Victor Sales" read-only field */
+.locked-input {
+  background-color: #f8fafc !important;
+  color: #475569 !important;
+  border: 2px solid #e2e8f0 !important;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+.compact-modal {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Search Bar Placement */
+.search-bar-wrapper {
+  flex: 1;
+  margin: 0 30px;
+  max-width: 450px;
+}
+
+.search-input-field {
+  width: 100%;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid #cbd5e1;
+  background-color: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+.search-input-field:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Styles specifically for the "Victor Sales" box */
+.locked-input-field {
+  background-color: #f1f5f9 !important; /* Light gray to show it's disabled */
+  color: #475569 !important; /* Darker text so it's readable */
+  border: 1px solid #94a3b8 !important;
+  font-weight: 600;
+  cursor: not-allowed;
+}
+
+.btn-save-lead {
+  background-color: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-save-lead:hover {
+  background-color: #1d4ed8;
+}
+
+/* Spinner Container - Centers the circle */
+.spinner-container {
+  grid-column: 1 / -1; /* Spans across the whole grid */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+/* The Loading Circle */
+.loading-circle {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* Light grey background of circle */
+  border-top: 5px solid #2563eb; /* Blue spinning part */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Optional: Fade in the grid when loaded */
+.lead-grid {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.btn-view-details {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.btn-update-save {
+  background: #2563eb;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.update-notes-area {
+  width: 100%;
+  min-height: 120px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.modal-footer-compact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-delete {
+  background: transparent;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: #fef2f2;
+}
+
+.lead-card {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lead-click-hint {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  text-align: right;
+  margin-top: 10px;
+  font-style: italic;
+}
